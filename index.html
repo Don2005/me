@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="" type="image/x-icon">
 </head>
 <body>
-    <div id="fireflies-container"></div>
+    <div class="loader" id="loader">
+        <span>Welcome</span>
+    </div>
     <div class="background"></div>
     <div class="all">
         <div class="header" id="header">    
@@ -43,12 +45,26 @@
         <div class="about" id="about">
             <div class="nav-none"></div>
             <div class="about-content">
-                <div class="about-content-top">
-                    <span>About</span>
+                <div class="about-content-left">
+                    <div class="about-content-left-up">
+                        <div class="about-content-left-up-title">
+                            <span>About</span>
+                        </div>
+                    </div>
                 </div>
-                
+                <div class="about-content-right">
+
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+              let loader = document.getElementById('loader');
+              loader.style.display = 'none';
+            }, 5000); // 5000 milisekund = 5 sekund
+          };
+    </script>
 </body>
 </html>

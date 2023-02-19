@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    overflow-x:hidden;
 }
 .all{
     display: flex;
@@ -13,6 +14,52 @@
     align-content: flex-start;
     width: 100vw;
 }
+.loader{
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    animation-name: fadeOut;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.loader span{
+    color: #ffffff;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation-name: shine;
+    animation-duration: 10s;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+@keyframes shine{
+    0%{
+        background-position: 0
+    }
+    100%{
+        background-position: 300px
+    }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
 .background{
     position: fixed;
     z-index: -100;
@@ -23,7 +70,7 @@
     background-image: url(3.jpg);
     background-position:bottom;
     background-size: cover;
-    filter: brightness(0.3);
+    filter: brightness(0.25);
 }
 .header{
     display: flex;
@@ -165,12 +212,47 @@
 .mousescroll img{
     width: 100%;
 }
+.about{
+    width: 100vw;
+}
 .about-content{
-    background-color: black;
     color: white;
     width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
 }
 .nav-none{
     height: 15vh;
     width: 100vw;
+}
+.about-content-left{
+    width: 30vw;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.about-content-left-up{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+.about-content-right{
+    width: 70vw;
+    height: 100%;
+    background-color: white;
 }
